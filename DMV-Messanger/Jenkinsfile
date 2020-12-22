@@ -4,7 +4,10 @@ pipeline {
         stage('Deploy') {
             steps {
                  nodejs(nodeJSInstallationName: 'nodejs') {
-                    sh 'npm --version'
+                    sh '''npm --version
+                          sls --version
+                    '''
+
                 }
             }
         }
