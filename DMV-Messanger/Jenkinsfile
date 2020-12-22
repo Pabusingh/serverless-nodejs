@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Deploy') {
             steps {
-                 nodejs(nodeJSInstallationName: 'nodejs') {
+                 nodejs(nodeJSInstallationName: 'nodejs-latest-sls') {
                     sh '''npm --version
                           sls --version
                     '''
