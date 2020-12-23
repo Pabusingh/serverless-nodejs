@@ -20,7 +20,7 @@ pipeline {
                           pwd 
                           cd DMV-Messanger
                           npm install                          
-                          sls deploy -v
+                          sls deploy --alias $ALIAS --retain
                     '''
 
                 }
