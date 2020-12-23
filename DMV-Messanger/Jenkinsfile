@@ -15,11 +15,14 @@ pipeline {
             // }
             steps {
                  nodejs(nodeJSInstallationName: 'nodejs') {
-                     if ($ALIAS == "qa") {
+                     script{
+                        if ($ALIAS == "qa") {
                          echo "====++++ qa ++++===="
-                     } else {
+                        } else {
                          echo "====++++something else ++++===="
+                        }
                      }
+                     
                     sh '''npm --version
                           sls --version
                           pwd 
