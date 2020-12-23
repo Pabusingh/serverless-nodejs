@@ -2,8 +2,13 @@ pipeline {
     agent  any
     stages {
         stage('Deploy') {
+            if (condition) {
+                onIf
+            } else {
+                onElse
+            }
             steps {
-                 nodejs(nodeJSInstallationName: 'nodejs-latest-sls') {
+                 nodejs(nodeJSInstallationName: 'nodejs') {
                     sh '''npm --version
                           sls --version
                     '''
