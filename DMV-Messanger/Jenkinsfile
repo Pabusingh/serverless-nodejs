@@ -1,5 +1,11 @@
 pipeline {
     agent  any
+    parameters{        
+        choice(
+            name: 'ALIAS',
+            choices:"qa\nstage",
+            description: "Alias of your lambda to which you wish to deploy to")        
+    }
     stages {
         stage('Deploy') {
             // if (condition) {
@@ -12,6 +18,9 @@ pipeline {
                     sh '''npm --version
                           sls --version
                           pwd 
+                          cd DMV-Messanger
+                          npm install
+                          sls deploy --alias $ALIAS --retain
                     '''
 
                 }
