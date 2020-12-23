@@ -19,9 +19,8 @@ pipeline {
                           sls --version
                           pwd 
                           cd DMV-Messanger
-                          npm install
-                          serverless alias remove --alias=Non-Prod
-                          sls remove -v                           
+                          npm install                          
+                          sls deploy -v
                     '''
 
                 }
