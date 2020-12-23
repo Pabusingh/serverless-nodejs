@@ -2,11 +2,11 @@ pipeline {
     agent  any
     stages {
         stage('Deploy') {
-            if (condition) {
-                onIf
-            } else {
-                onElse
-            }
+            // if (condition) {
+            //     onIf
+            // } else {
+            //     onElse
+            // }
             steps {
                  nodejs(nodeJSInstallationName: 'nodejs') {
                     sh '''npm --version
